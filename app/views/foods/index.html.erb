@@ -1,0 +1,12 @@
+<h1>Foods</h1>
+
+<div id="foods">
+  <% @foods.each do |food| %>
+    <%= render food %>
+    <p>
+      <%= button_to "Delete", food_path(food), method: :delete%>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New food", new_food_path %>

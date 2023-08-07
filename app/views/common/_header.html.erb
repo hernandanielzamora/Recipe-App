@@ -1,10 +1,13 @@
 <header class="app-header">
-  <h1>Recipe App</h1>    
+  <h1><%= link_to 'Recipe App', root_path %></h1>    
   <div id="right-header">
     <% if user_signed_in? %>
-      <%= button_to 'Edit your profile', edit_user_registration_path, method: :get %>
-      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
       <%= button_to 'Foods', foods_path, method: :get %>
+      <%# Needs to be change for the correct links %>
+      <%= button_to 'General Food List', edit_user_registration_path, method: :get %>
+      <%= button_to 'Public Recipes', edit_user_registration_path, method: :get %>
+      <%# Sign out is working fine %>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
     <% else %>
       <%= button_to "Log in", new_user_session_path %>
       <%= button_to 'Sign up', new_user_registration_path, method: :get %>

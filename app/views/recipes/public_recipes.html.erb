@@ -1,0 +1,33 @@
+<p>Public Recipes </p>
+
+<ul>
+  <% @recipes.each do |recipe| %>
+    <% if recipe.public %>
+      <li>
+        <div class="recipe-name">
+          <%= link_to recipe.name, recipe_path(recipe) %>
+        </div>
+        <div class="recipe-description">
+          <%= recipe.description %>
+        </div>
+        <div class="food-count">
+          Food Items: <%= recipe.foods.count %>
+        </div>
+        <div class="total-price">
+          Total Price: <%= number_to_currency(recipe.final_price) %>
+        </div>
+        <div class="user-name">
+          By: <%= recipe.user.name %>
+        </div>
+      </li>
+
+      <div class="recipe-debug">
+        <%= recipe.user_id %>
+        Recipe ID: <%= recipe.id %><br>
+        Food IDs: <%= recipe.foods.pluck(:id) %><br>
+        Final Price: <%= recipe.final_price %>
+      </div>
+    <% end %>
+  <% end %>
+</ul>
+

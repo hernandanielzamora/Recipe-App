@@ -1,6 +1,6 @@
 class FoodsController < ApplicationController
   def index
-    @foods = Food.all
+    @foods = Food.where(user_id: current_user)
   end
 
   def new
@@ -30,7 +30,6 @@ class FoodsController < ApplicationController
 
   private
 
-  # Only allow a list of trusted parameters through.
   def food_params
     params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
   end

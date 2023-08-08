@@ -5,7 +5,7 @@
     <p>Public</p>
     <%= button_to recipe_path, method: :patch, class: "oval-toggle" do %>
       <% if @recipe.public? %>
-        <div class="circular-toggle-on"></div>
+        <div class="circular-toggle-on">Toogle Btn</div>
       <% else %>
         <div class="cicular-toggle-off"></div>
       <% end %>
@@ -14,3 +14,42 @@
 </div>
 <p>Cooking time: <%= @recipe.cooking_time %> hour(s)</p>
 
+
+<div>
+  <%= button_to "generate shopping list", new_recipe_path, method: :get %>
+  <%= button_to "Add New ingredients", new_recipe_path, method: :get %>
+</div>
+
+
+<% if @foods.any? %>
+  <div class="flex table-container">
+    <table class="food-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Measured in</th>
+          <th>Price (Per Unit)</th>
+          <th>Quantity</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @foods.each do |food| %>
+          <tr>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td><%= number_to_currency(food.price) %></td>
+            <td><%= food.quantity %></td>
+            <td>
+            <%= button_to "Delete", food_path(food), method: :delete, class: "btn"  %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+  <p>No food available.</p>
+<% end %>
+
+<%= link_to "Back to All Recipes", recipes_path %>

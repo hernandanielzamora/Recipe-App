@@ -76,6 +76,11 @@
   transform: scale(1.05);
 }
 
+.btn-container {
+  justify-content: space-evenly;
+  margin-top: 2%;
+}
+
 /* NavBar */
 
 .navbar {
@@ -93,6 +98,11 @@
 }
 
 .navbar-title {
+  text-decoration: none;
+  color: #000;
+}
+
+a {
   text-decoration: none;
   color: #000;
 }
@@ -139,6 +149,26 @@ form {
   width: 20%;
   margin-top: 2%;
   margin-left: 4%;
+}
+
+/* Recipe List */
+
+.recipes-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+.recipe-card {
+  width: 50%;
+  justify-content: space-between;
+  margin: 2%;
+  align-items: center;
+  padding: 2%
+}
+
+.recipe-card h2 {
+  margin-bottom: 15%;
 }
 
 /* Food Section */

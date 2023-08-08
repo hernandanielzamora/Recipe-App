@@ -1,0 +1,16 @@
+<h1><%= @recipe.name %></h1>
+<div>
+  <p>Preparation time: <%= @recipe.preparation_time %> hour(s)</p>
+  <div>
+    <p>Public</p>
+    <%= button_to recipe_path, method: :patch, class: "oval-toggle" do %>
+      <% if @recipe.public? %>
+        <div class="circular-toggle-on"></div>
+      <% else %>
+        <div class="cicular-toggle-off"></div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<p>Cooking time: <%= @recipe.cooking_time %> hour(s)</p>
+

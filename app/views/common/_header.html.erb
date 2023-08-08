@@ -3,9 +3,7 @@
   <div class="navbar-btn-container flex">
     <% if user_signed_in? %>
       <%= button_to 'Foods', foods_path, method: :get, class:'btn nav-btn' %>
-      <%# General Food List needs correct link %>
-      <%= button_to 'General Food List', root_path, method: :get, class:'btn nav-btn' %>
-      <%# Sign out is working fine %>
+      <%= button_to 'General Food List', general_food_list_user_path(current_user), method: :get, class:'btn nav-btn' %>
       <%= button_to 'Public Recipes', public_recipes_path, method: :get, class:'btn nav-btn' %>
       <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:'btn nav-btn' %>
     <% else %>

@@ -1,16 +1,16 @@
-<header class="app-header">
-  <h1><%= link_to 'Recipe App', root_path %></h1>    
-  <div id="right-header">
+<header class="navbar flex">
+  <h1><%= link_to 'Recipe App', root_path, class:'navbar-title' %></h1>    
+  <div class="navbar-btn-container flex">
     <% if user_signed_in? %>
-      <%= button_to 'Foods', foods_path, method: :get %>
+      <%= button_to 'Foods', foods_path, method: :get, class:'btn nav-btn' %>
       <%# Needs to be change for the correct links %>
-      <%= button_to 'General Food List', edit_user_registration_path, method: :get %>
-      <%= button_to 'Public Recipes', edit_user_registration_path, method: :get %>
+      <%= button_to 'General Food List', root_path, method: :get, class:'btn nav-btn' %>
+      <%= button_to 'Public Recipes', root_path, method: :get, class:'btn nav-btn' %>
       <%# Sign out is working fine %>
-      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:'btn nav-btn' %>
     <% else %>
       <%= button_to "Log in", new_user_session_path %>
-      <%= button_to 'Sign up', new_user_registration_path, method: :get %>
+      <%= button_to 'Sign up', new_user_registration_path, method: :get, class:'btn nav-btn' %>
     <% end %>
   </div>
 </header>

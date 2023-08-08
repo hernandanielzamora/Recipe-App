@@ -9,7 +9,7 @@
       <%# Sign out is working fine %>
       <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:'btn nav-btn' %>
     <% else %>
-      <%= button_to "Log in", new_user_session_path %>
+      <%= button_to "Log in", new_user_session_path, class:'btn nav-btn' %>
       <%= button_to 'Sign up', new_user_registration_path, method: :get, class:'btn nav-btn' %>
     <% end %>
   </div>

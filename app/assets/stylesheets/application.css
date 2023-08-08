@@ -32,6 +32,11 @@
   text-align: center;
 }
 
+.left-title {
+  text-align: start;
+  margin-left: 2%;
+}
+
 .link-to {
   padding: 10px 20px;
   background-color: #ccc;
@@ -91,6 +96,50 @@
   color: #000;
 }
 
+/* Forms */
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2%;
+}
+
+.field {
+  padding-top: 1.5%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field input {
+  width: 25%;
+  padding: 0.5% 0.2%;
+}
+
+.remember-field {
+  margin: 1%;
+}
+
+.login-link {
+  padding: 10px 20px;
+  background-color: #ccc;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.link-container {
+  justify-content: space-between;
+  flex-direction: column;
+  width: 20%;
+  margin-top: 2%;
+  margin-left: 4%;
+}
+
 /* Food Section */
 
 .table-container {
@@ -119,24 +168,4 @@ tbody {
 
 .food-table tr:nth-child(even) {
   background-color: #dddcdc;
-}
-
-/* Forms */
-
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 2%;
-}
-
-.field {
-  padding-top: 1.5%;
-  flex-direction: column;
-  align-items: center;
-}
-
-.field input {
-  width: 25%;
-  padding: 0.5% 0.2%;
 }

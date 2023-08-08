@@ -156,7 +156,7 @@ form {
 .recipes-container {
   flex-direction: column;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
 
 .recipe-card {
@@ -164,7 +164,7 @@ form {
   justify-content: space-between;
   margin: 2%;
   align-items: center;
-  padding: 2%
+  padding: 2%;
 }
 
 .recipe-card h2 {

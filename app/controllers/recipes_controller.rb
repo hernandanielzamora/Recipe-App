@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
-  def public_recipes 
+  def public_recipes
     @recipes = Recipe.where(public: true)
   end
 

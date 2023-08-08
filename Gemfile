@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
+# CanCanCan
+gem 'cancancan'
+
 # Letter Opener
 gem 'letter_opener'
 

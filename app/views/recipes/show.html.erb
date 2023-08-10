@@ -1,23 +1,23 @@
-<h1><%= @recipe.name %></h1>
-<div>
-  <p>Preparation time: <%= @recipe.preparation_time %> hour(s)</p>
-  <div>
-    <div class="toggle_btn">
-      <% if can? :update, @recipe %>
-        <%= form_with(model: @recipe) do |form| %>
-          <label class="switch">
-            <%= form.label :public %>
-            <%= form.check_box :public, onchange: 'this.form.submit();', class:"checkbox" %>
-            <span class="slider round"></span>
-          </label>
-        <% end %>
+<h1 class="title"><%= @recipe.name %></h1>
+<div class="flex recipe-details">
+  <div class="recipe-left">
+    <h3 class="subtitle">Preparation time: <%= @recipe.preparation_time %> hour(s)</h3>
+    <h3 class="subtitle">Cooking time: <%= @recipe.cooking_time %> hour(s)</h3>
+    <h3 class="subtitle">Description: </h3>
+    <p><%= @recipe.description%></p>
+  </div>
+  <div class="recipe-right">
+    <% if can? :update, @recipe %>
+      <%= form_with(model: @recipe) do |form| %>
+        <label class="switch flex">
+          <%= form.label :public %>
+          <%= form.check_box :public, onchange: 'this.form.submit();', class:"checkbox" %>
+          <span class="slider"></span>
+        </label>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
-
-<p>Cooking time: <%= @recipe.cooking_time %> hour(s)</p>
-
 
 <div class="btn-container flex">
   <%= button_to "Generate shopping list", shopping_lists_path, method: :get, class: "btn" %>
@@ -28,6 +28,7 @@
     <% end %>
   <% end %>
 </div>
+<div class="crossline"></div>
 
 <% if @foods.any? %>
   <div class="flex table-container">
@@ -42,28 +43,28 @@
         </tr>
       </thead>
       <tbody>
-      <% @foods.each do |food| %>
-        <tr>
-        <td><%= food.food.name %></td>
-        <td><%= "#{food.quantity} #{food.food.measurement_unit}"  %></td>
-        <td><%= number_to_currency(food.quantity * food.food.price) %></td>
-        <% if can? :update, @recipe %>
-        <td>
-          <%= button_to "Change Amount", edit_recipe_food_path(food), method: :get, class: "btn" %>
-        </td>
-        <td>
-          <%= button_to "Delete", destroy_recipe_food_path(food), method: :delete, class: "btn" %>
-        </td>
+        <% @foods.each do |food| %>
+          <tr>
+          <td><%= food.food.name %></td>
+          <td><%= "#{food.quantity} #{food.food.measurement_unit}"  %></td>
+          <td><%= number_to_currency(food.quantity * food.food.price) %></td>
+          <% if can? :update, @recipe %>
+          <td>
+            <%= button_to "Change Amount", edit_recipe_food_path(food), method: :get, class: "btn" %>
+          </td>
+          <td>
+            <%= button_to "Delete", destroy_recipe_food_path(food), method: :delete, class: "btn" %>
+          </td>
+          <% end %>
+        </tr>
         <% end %>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 <% else %>
-  <p>Please, add some ingredient to the recipe!</p>
+  <h3 class="subtitle show-back">Please, add some ingredient to the recipe!</p>
 <% end %>
 
-
-
-
-<%= link_to "Back to All Recipes", recipes_path, class:'link-to back-btn' %>
+<div class="footer">
+  <%= link_to "Back to All Recipes", recipes_path, class:'link-to back-btn show-back' %>
+</div>

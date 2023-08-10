@@ -60,7 +60,22 @@
   left: 1%;
 }
 
-/* Buttons */
+.show-back {
+  margin: 2%;
+}
+
+.subtitle {
+  padding: 2%;
+}
+
+.crossline {
+  width: 80%;
+  height: 0.1em;
+  background-color: #000;
+  margin: 2% auto;
+}
+
+/* sliders */
 
 .btn {
   padding: 10px 20px;
@@ -165,10 +180,128 @@ form {
   margin: 2%;
   align-items: center;
   padding: 2%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: scale(1.05);
 }
 
 .recipe-card h2 {
   margin-bottom: 15%;
+}
+
+.right-recipe-col {
+  margin-left: 10%;
+}
+
+/* Recipe Show */
+
+.checkbox {
+  display: none;
+}
+
+.slider {
+  position: relative;
+  display: block;
+  width: 3.5em;
+  height: 1em;
+}
+
+.slider::before,
+.slider::after {
+  content: "";
+  display: block;
+  position: absolute;
+  cursor: pointer;
+}
+
+.slider::before {
+  width: 100%;
+  height: 100%;
+  background-color: #bbb;
+  border-radius: 25px;
+  border: 1px solid #333;    
+  transition: background-color 0.5s ease;
+}
+
+.slider::after {
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 1px #000;    
+  transition: left 0.5s ease;
+}
+.checkbox:checked + .slider::before {
+  background-color: #5edd04;
+}
+
+.checkbox:checked + .slider::after {
+  left: 75%;
+}
+
+.recipe-details {
+  justify-content: space-between;
+}
+
+.recipe-left {
+  width: 50%;
+  margin-left: 2%;
+}
+
+.recipe-left p {
+  padding: 2%;
+}
+
+.recipe-right {
+  margin-right: 5%;
+}
+
+.switch label {
+  margin-right: 1em;
+}
+
+
+/* Shoping List */
+
+.shopping-info {
+  justify-content: space-between;
+  margin: 2%;
+}
+
+.shopping-info h2 {
+  margin: auto 2%;
+}
+
+/* Add Ingredient */
+
+.add-field {
+  display: inherit;
+}
+
+.add-field label {
+  margin-bottom: 2%;
+}
+
+select {
+  width: 25%;
+  padding: 0.5%;
+}
+
+/* Public Recipes */
+
+.publish-det-container {
+  width: 30%;
+}
+
+.publish-details {
+  padding: 2%;
 }
 
 /* Food Section */

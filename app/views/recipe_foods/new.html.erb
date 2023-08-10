@@ -1,26 +1,22 @@
-<h1>Create New Recipe Food</h1>
+<h1 class="title">Add Ingredient to create recipe food</h1>
 
 <%= form_with(model: @recipe_food, url: recipe_foods_path) do |form| %>
-    <%# Quantity field %>
-    <div class="field">
-      <%= form.label :quantity %>
-      <%= form.number_field :quantity %>
-    </div>
+  <div class="field add-field">
+    <%= form.label :quantity %>
+    <%= form.number_field :quantity%>
+  </div>
 
-    <%# Food association %>
-    <div class="field">
-      <%= form.label :food_id %>
-      <%= form.collection_select(:food_id, Food.all, :id, :name) %>
-    </div>
+  <div class="field add-field">
+    <%= form.label :food_id %>
+    <%= form.collection_select(:food_id, Food.all, :id, :name)%>
+  </div>
 
-    <%# Recipe association %>
-    <div class="field">
-      <%= form.label :recipe_id %>
-      <%= form.collection_select(:recipe_id, Recipe.all, :id, :name) %>
-    </div>
+  <div class="field add-field">
+    <%= form.label :recipe_id %>
+    <%= form.collection_select(:recipe_id, Recipe.all, :id, :name) %>
+  </div>
 
-    <%# Submit button %>
-    <div class="actions">
-      <%= form.submit %>
-    </div>
+  <div class="field add-field">
+    <%= form.submit "Add Ingredient" %>
+  </div>
 <% end %>

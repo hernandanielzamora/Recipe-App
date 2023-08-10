@@ -11,6 +11,7 @@
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
+  - [Setup](#setup)
   - [Usage](#usage)
   - [Run tests](#run-tests)
 - [👥 Authors](#authors)
@@ -130,7 +131,13 @@ $ rubocop
 $ npx stylelint "**/*.{css,scss}"
 ```
 
+### Setup
 
+Clone this repository to your desired folder:
+```
+cd my folder
+git clone  https://github.com/hernandanielzamora/Recipe-App.git
+```
 
 ### Usage
 
@@ -140,8 +147,6 @@ To run the project, execute the following command:
 rails server
 ```
 
-
-
 ### Run tests
 
 To run tests, run the following command:
@@ -149,8 +154,6 @@ To run tests, run the following command:
   ```sh
     rspec ./spec/integration
   ```
-
-
 
 ## 👥 Authors <a name="authors"></a>
 
@@ -162,10 +165,13 @@ To run tests, run the following command:
 - Twitter: [Eric](https://twitter.com/EricAntwi384)
 - LinkedIn: [Eric](https://www.linkedin.com/in/ericopokuantwi)
 
+## 👥 Author: <a name="authors">Hernán Zamora</a>
+
+- GitHub: [@hernandanielzamora](https://github.com/hernandanielzamora)
+- Twitter: [@HernanZamora14](https://twitter.com/HernanZamora14)
+- LinkedIn: [Linkedin](https://www.linkedin.com/in/hernan-zamora-03a697236/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 
 ## 🔭 Future Features <a name="future-features"></a>
 
@@ -173,9 +179,6 @@ To run tests, run the following command:
 - [ ] **[Build mobile version]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -185,16 +188,11 @@ Feel free to check the [issues page](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project...
+If you like this project please express your appreciation on LinkedIn.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>

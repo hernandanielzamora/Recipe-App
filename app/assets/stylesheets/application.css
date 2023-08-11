@@ -224,7 +224,7 @@ form {
   height: 100%;
   background-color: #bbb;
   border-radius: 25px;
-  border: 1px solid #333;    
+  border: 1px solid #333;
   transition: background-color 0.5s ease;
 }
 
@@ -235,9 +235,10 @@ form {
   height: 100%;
   border-radius: 50%;
   background-color: #fff;
-  box-shadow: 0px 0px 5px 1px #000;    
+  box-shadow: 1px 1px 5px 1px #000;
   transition: left 0.5s ease;
 }
+
 .checkbox:checked + .slider::before {
   background-color: #5edd04;
 }
@@ -266,7 +267,6 @@ form {
 .switch label {
   margin-right: 1em;
 }
-
 
 /* Shoping List */
 

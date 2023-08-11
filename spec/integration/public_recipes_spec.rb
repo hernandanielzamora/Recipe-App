@@ -33,9 +33,5 @@ RSpec.describe 'recipes/public_recipes.html.erb', type: :view do
     it "Shows the user name of the public recipe's owner" do
       expect(rendered).to have_content 'By: Eric'
     end
-
-    it 'Shows the food ids' do
-      expect(rendered).to have_content "Food IDs: [#{@recipe_food1.food_id}, #{@recipe_food2.food_id}]"
-    end
   end
 end

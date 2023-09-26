@@ -1,0 +1,18 @@
+<h1 class="title">Food List for User</h1>
+
+<div class="flex table-container">
+  <table class="food-table">
+    <tr>
+      <th>Name</th>
+      <th>Total Quantity</th>
+      <th>Total Price</th>
+    </tr>
+    <% @general_food_list.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.total_quantity %></td>
+        <td><%= food.total_price %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

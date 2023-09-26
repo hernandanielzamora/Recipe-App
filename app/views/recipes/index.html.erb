@@ -1,0 +1,17 @@
+<h1 class="title">List of All Recipes</h1>
+<%= link_to "Add Recipe", new_recipe_path, class: "link-to back-btn" %>
+<div class="flex recipes-container">
+<% @recipes.each do |recipe| %>
+    <div class="recipe-card flex">
+      <div class="left-recipe-col">
+        <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+        <% if can? :destroy, recipe %>
+          <%= button_to "Remove", recipe_path(recipe), method: :delete, class: "btn del-btn" %>
+        <% end %>
+      </div>
+      <div class="right-recipe-col">
+        <p><%= recipe.description %></p>
+      </div>
+    </div>
+<% end %>
+</div>

@@ -1,15 +1,335 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Global Variables */
+
+.flex {
+  display: flex;
+}
+
+.table-border {
+  border: 1px solid black;
+}
+
+.notice {
+  color: #54c206;
+  margin-left: 1%;
+}
+
+.alert {
+  color: #f60202;
+  margin-left: 1%;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+.left-title {
+  text-align: start;
+  margin-left: 2%;
+}
+
+.link-to {
+  padding: 10px 20px;
+  background-color: #ccc;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: absolute;
+  left: 89%;
+}
+
+.link-to:hover {
+  transform: scale(1.05);
+}
+
+.back-btn {
+  left: 1%;
+}
+
+.show-back {
+  margin: 2%;
+}
+
+.subtitle {
+  padding: 2%;
+}
+
+.crossline {
+  width: 80%;
+  height: 0.1em;
+  background-color: #000;
+  margin: 2% auto;
+}
+
+/* sliders */
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn-container {
+  justify-content: space-evenly;
+  margin-top: 2%;
+}
+
+/* NavBar */
+
+.navbar {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 10%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2%;
+}
+
+.navbar-btn-container {
+  justify-content: space-between;
+  width: 60%;
+}
+
+.navbar-title {
+  text-decoration: none;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Forms */
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2%;
+}
+
+.field {
+  padding-top: 1.5%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.field input {
+  width: 25%;
+  padding: 0.5% 0.2%;
+}
+
+.remember-field {
+  margin: 1%;
+}
+
+.login-link {
+  padding: 10px 20px;
+  background-color: #ccc;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.link-container {
+  justify-content: space-between;
+  flex-direction: column;
+  width: 20%;
+  margin-top: 2%;
+  margin-left: 4%;
+}
+
+/* Recipe List */
+
+.recipes-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.recipe-card {
+  width: 50%;
+  justify-content: space-between;
+  margin: 2%;
+  align-items: center;
+  padding: 2%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: scale(1.05);
+}
+
+.recipe-card h2 {
+  margin-bottom: 15%;
+}
+
+.right-recipe-col {
+  margin-left: 10%;
+}
+
+/* Recipe Show */
+
+.checkbox {
+  display: none;
+}
+
+.slider {
+  position: relative;
+  display: block;
+  width: 3.5em;
+  height: 1em;
+}
+
+.slider::before,
+.slider::after {
+  content: "";
+  display: block;
+  position: absolute;
+  cursor: pointer;
+}
+
+.slider::before {
+  width: 100%;
+  height: 100%;
+  background-color: #bbb;
+  border-radius: 25px;
+  border: 1px solid #333;
+  transition: background-color 0.5s ease;
+}
+
+.slider::after {
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 1px #000;
+  transition: left 0.5s ease;
+}
+
+.checkbox:checked + .slider::before {
+  background-color: #5edd04;
+}
+
+.checkbox:checked + .slider::after {
+  left: 75%;
+}
+
+.recipe-details {
+  justify-content: space-between;
+}
+
+.recipe-left {
+  width: 50%;
+  margin-left: 2%;
+}
+
+.recipe-left p {
+  padding: 2%;
+}
+
+.recipe-right {
+  margin-right: 5%;
+}
+
+.switch label {
+  margin-right: 1em;
+}
+
+/* Shoping List */
+
+.shopping-info {
+  justify-content: space-between;
+  margin: 2%;
+}
+
+.shopping-info h2 {
+  margin: auto 2%;
+}
+
+/* Add Ingredient */
+
+.add-field {
+  display: inherit;
+}
+
+.add-field label {
+  margin-bottom: 2%;
+}
+
+select {
+  width: 25%;
+  padding: 0.5%;
+}
+
+/* Public Recipes */
+
+.publish-det-container {
+  width: 30%;
+}
+
+.publish-details {
+  padding: 2%;
+}
+
+/* Food Section */
+
+.table-container {
+  justify-content: center;
+}
+
+.food-table {
+  width: 70%;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+
+tbody {
+  text-align: center;
+}
+
+.food-table th,
+.food-table td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.food-table th {
+  background-color: #f2f2f2;
+}
+
+.food-table tr:nth-child(even) {
+  background-color: #dddcdc;
+}

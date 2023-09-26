@@ -1,0 +1,26 @@
+<h1 class="title">Published Recipes</h1>
+
+<div class="flex recipes-container ">
+  <% @recipes.each do |recipe| %>
+    <% if recipe.public %>
+      <div class="recipe-card flex">
+        <div>
+          <div class="recipe-name">
+            <h2 class="subtitle"><%= link_to recipe.name, recipe_path(recipe) %></h2>
+          </div>
+          <div class="user-name">
+            By: <%= recipe.user.name %>
+          </div>
+        </div>
+        <div class="publish-det-container">
+          <div class="publish-details">
+            Food Items: <%= recipe.foods.count %>
+          </div>
+          <div class="publish-details">
+            Total Price: <%= number_to_currency(recipe.final_price) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,29 @@
+<h1 class='title'>Foods</h1>
+<%= link_to "New food", new_food_path, class:'link-to' %>
+
+<div class="flex table-container">
+  <table class="food-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Measured in</th>
+        <th>Price (Per Unit)</th>
+        <th>Quantity</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td><%= number_to_currency(food.price) %></td>
+          <td><%= food.quantity %></td>
+          <td>
+          <%= button_to "Delete", food_path(food), method: :delete, class: "btn"  %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
